@@ -62,7 +62,7 @@ module.exports = class ebserve{
      * @param {Number} port (optional) the port on which to host the server
      */
     serve(port = null){
-        require("./server").server(this.mongo_url, this.static_dir, this.static_file, port);
+        require("./server").server(this.mongo_url, this.static_dir, this.static_file, this.port);
     }
 
     /**
