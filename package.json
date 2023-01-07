@@ -1,11 +1,11 @@
 {
-  "name": "ebserv",
-  "version": "1.0.0",
+  "name": "ebserve",
+  "version": "1.0.1",
   "description": "package for automating the process of setting up a NodeJS/Express server",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emmy-bradfield/ebserv.git"
+    "url": "git+https://github.com/emmy-bradfield/ebserve.git"
   },
   "keywords": [
     "server",
@@ -17,9 +17,9 @@
   "author": "Emily Bradfield",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/emmy-bradfield/ebserv/issues"
+    "url": "https://github.com/emmy-bradfield/ebserve/issues"
   },
-  "homepage": "https://github.com/emmy-bradfield/ebserv#readme",
+  "homepage": "https://github.com/emmy-bradfield/ebserve#readme",
   "dependencies": {
     "axios": "^1.2.2",
     "cors": "^2.8.5",

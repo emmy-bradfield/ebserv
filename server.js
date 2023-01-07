@@ -1,9 +1,22 @@
+/**
+ * @module server.js
+ * @exports server a function to connect to the database and serve the front end
+ */
 const EXPRESS = require("express");
 const APP = EXPRESS();
 const CORS = require("cors");
 const PATH = require('path');
 require("dotenv").config();
 
+/**
+ * 
+ * Connect to the MongoDB/Atlas Cloud Database and serve a static (html) file as the frontend
+ * 
+ * @param {*} MONGO_URL the url to the Mongo Cloud Database
+ * @param {*} STATIC_DIR the (relative) path to the static front-end file (usually index.html)
+ * @param {*} STATIC_FILE the static file to host
+ * @param {*} PORT optional; the port on which to host the server
+ */
 exports.server = (MONGO_URL, STATIC_DIR, STATIC_FILE, PORT = null) => {
     let APP_PORT;
     let DIR = process.cwd() + STATIC_DIR;
