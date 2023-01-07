@@ -1,27 +1,43 @@
 module.exports = class ebserv{
     constructor({
         schema,
-        schema_name,
-        schema_dir
+        mongo_url,
+        static_dir,
+        static_file
     })
     
     {
         this.schema = schema;
-        this.schema_name = schema_name || 'document';
-        this.schema_dir = schema_dir || '.';
+        this.mongo_url = mongo_url;
+        this.static_dir = static_dir;
+        this.static_file = static_file;
     }
     
     model(){
-        require("./model").createSchema(this.schema, this.schema_name, this.schema_dir);
+        require("./model").createSchema(this.schema);
     }
     
     quickRoute(){
         const {ROUTER, createRoutes, customRoute} = require("./router")
-        createRoutes(this.schema_name, this.schema_dir)
+        createRoutes()
     }
 
     addRoute(type, url, param){
         const {ROUTER, createRoutes, customRoute} = require("./router")
-        customRoute(this.schema_name, this.schema_dir, type, url, param)
+        customRoute(type, url, param)
+    }
+
+    serve(port = null){
+        require("./server").server(this.mongo_url, this.static_dir, this.static_file, port);
+    }
+
+    quickstart(){
+        console.log("Server Quickstart:\nGenerating Schema")
+        this.model();
+        console.log("Schema Generated\nGenerating Routes")
+        this.quickRoute();
+        console.log("Routes Generated\nStarting Server")
+        this.serve();
+        console.log("\n\nQuickstart Finished Setup")
     }
 }
