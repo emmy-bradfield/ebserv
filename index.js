@@ -3,7 +3,8 @@ module.exports = class ebserv{
         schema,
         mongo_url,
         static_dir,
-        static_file
+        static_file,
+        port
     })
     
     {
@@ -11,6 +12,7 @@ module.exports = class ebserv{
         this.mongo_url = mongo_url;
         this.static_dir = static_dir;
         this.static_file = static_file;
+        this.port = port;
     }
     
     model(){
@@ -28,7 +30,7 @@ module.exports = class ebserv{
     }
 
     serve(port = null){
-        require("./server").server(this.mongo_url, this.static_dir, this.static_file, port);
+        require("./server").server(this.mongo_url, this.static_dir, this.static_file, this.port);
     }
 
     quickstart(){

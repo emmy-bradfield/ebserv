@@ -6,6 +6,7 @@ require("dotenv").config();
 
 exports.server = (MONGO_URL, STATIC_DIR, STATIC_FILE, PORT = null) => {
     let APP_PORT;
+    let DIR = process.cwd() + STATIC_DIR;
     process.env.PORT ? APP_PORT = process.env.PORT : PORT ? APP_PORT = PORT : APP_PORT = 4000;
     APP.use(EXPRESS.json())
     APP.use(CORS())
@@ -25,7 +26,7 @@ exports.server = (MONGO_URL, STATIC_DIR, STATIC_FILE, PORT = null) => {
 
     APP.use(EXPRESS.static(PATH.resolve(__dirname, STATIC_DIR)))
     APP.get('*', (req, res) => {
-        res.sendFile(PATH.resolve(__dirname, STATIC_DIR, STATIC_FILE))
+        res.sendFile(PATH.resolve(__dirname, DIR, STATIC_FILE))
     })
     
     let SERVER = APP.listen(APP_PORT, (err) => {
