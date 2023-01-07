@@ -1,0 +1,27 @@
+{
+  "name": "ebserv",
+  "version": "1.0.0",
+  "description": "package for automating the process of setting up a NodeJS/Express server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmy-bradfield/ebserv.git"
+  },
+  "keywords": [
+    "server",
+    "backend",
+    "nodejs",
+    "express",
+    "mongoose"
+  ],
+  "author": "Emily Bradfield",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emmy-bradfield/ebserv/issues"
+  },
+  "homepage": "https://github.com/emmy-bradfield/ebserv#readme"
+}
