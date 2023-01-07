@@ -29,7 +29,7 @@ const createRoutes = () => {
     })
 }
 
-const customRoute = (Document, TYPE, ROUTE_URL, PARAM = null) => {
+const customRoute = (TYPE, ROUTE_URL, PARAM = null) => {
     switch (TYPE){
         case 'post':
             ROUTER.route(ROUTE_URL).post((req, res) => {
