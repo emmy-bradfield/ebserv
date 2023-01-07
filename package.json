@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "package for automating the process of setting up a NodeJS/Express server",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emmy-bradfield/ebserv.git"
@@ -23,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/emmy-bradfield/ebserv/issues"
   },
-  "homepage": "https://github.com/emmy-bradfield/ebserv#readme"
+  "homepage": "https://github.com/emmy-bradfield/ebserv#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "model.js": "^0.0.1",
+    "mongoose": "^6.8.3"
+  }
 }
